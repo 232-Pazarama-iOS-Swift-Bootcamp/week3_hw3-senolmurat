@@ -29,7 +29,7 @@ final class MainView: UIView {
         super.init(frame: .zero)
         backgroundColor = .gray
         
-        collectionView.register(PodcastCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(iTunesItemCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         setupCollectionViewLayout()
     }
     

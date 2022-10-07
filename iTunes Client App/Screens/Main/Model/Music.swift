@@ -12,7 +12,7 @@ struct MusicResponse: Decodable {
     let results: [Music]?
 }
 
-// MARK: - Result
+// MARK: - Music
 struct Music: Decodable {
     let wrapperType: String?
     let kind: String?
@@ -21,9 +21,9 @@ struct Music: Decodable {
     let trackCensoredName: String?
     let artistViewURL, collectionViewURL, trackViewURL: String?
     let previewURL: String?
-    let artworkUrl30, artworkUrl60, artworkUrl100: String?
+    let artworkUrl30, artworkUrl60, artworkUrl100: URL?
     let collectionPrice, trackPrice: Double?
-    let releaseDate: Date?
+    let releaseDate: String?
     let collectionExplicitness, trackExplicitness: String?
     let discCount, discNumber, trackCount, trackNumber: Int?
     let trackTimeMillis: Int?
@@ -34,4 +34,8 @@ struct Music: Decodable {
     let collectionArtistName, contentAdvisoryRating: String?
     let collectionArtistID: Int?
     let collectionArtistViewURL: String?
+    
+    var artworkLarge: URL? {
+        return URL(string: (artworkUrl100?.absoluteString.replacingOccurrences(of: "100x100", with: "600x600"))!)
+    }
 }

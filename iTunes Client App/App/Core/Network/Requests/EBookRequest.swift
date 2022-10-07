@@ -1,13 +1,13 @@
 //
-//  PodcastRequest.swift
-//  ArabamAssignment
+//  EBookRequest.swift
+//  iTunes Client App
 //
-//  Created by Muhammed Karakul on 11.01.2022.
+//  Created by Murat ŞENOL on 5.10.2022.
 //
 
 import Foundation
 
-struct PodcastRequest: DataRequest {
+struct EBookRequest: DataRequest {
     
     var searchText: String
     var baseURL: String {
@@ -19,22 +19,21 @@ struct PodcastRequest: DataRequest {
     
     var queryItems: [String : String] {
         ["term": searchText,
-         "media" : "podcast"]
+         "media" : "ebook"]
     }
     
     var method: HTTPMethod {
         .get
     }
     
-    init(searchText: String = "Podcast") {
+    init(searchText: String = "a") {
         self.searchText = searchText
     }
     
-    func decode(_ data: Data) throws -> PodcastResponse {
+    func decode(_ data: Data) throws -> EBookResponse {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let response = try decoder.decode(PodcastResponse.self, from: data)
+        let response = try decoder.decode(EBookResponse.self, from: data)
         return response
     }
 }
-

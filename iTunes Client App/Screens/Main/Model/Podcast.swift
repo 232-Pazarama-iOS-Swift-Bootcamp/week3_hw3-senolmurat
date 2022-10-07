@@ -4,9 +4,15 @@
 //
 //  Created by Pazarama iOS Bootcamp on 1.10.2022.
 //
-
 import Foundation
 
+// MARK: - PodcastResponse
+struct PodcastResponse: Decodable {
+    let resultCount: Int?
+    let results: [Podcast]?
+}
+
+// MARK: - Podcast
 struct Podcast: Decodable {
     let artistName: String?
     let trackName: String?

@@ -52,12 +52,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func setupWindow(with windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
-        let viewController = MainViewController()
-//        viewController.tabBarItem = UITabBarItem(title: <#T##String?#>, image: <#T##UIImage?#>, selectedImage: <#T##UIImage?#>)
+        
+        /*
+        let viewController = MainMockViewController()
+        let viewController2 = MusicMockViewController()
+        viewController2.title = "Music"
+        let viewController3 = MovieMockViewController()
+        viewController3.title = "Movie"
+        let viewController4 = SoftwareMockViewController()
+        viewController4.title = "Software"
+        let viewController5 = EBookMockViewController()
+        viewController5.title = "EBook"
+        
         let navigationController = UINavigationController(rootViewController: viewController)
+        let navigationController2 = UINavigationController(rootViewController: viewController2)
+        let navigationController3 = UINavigationController(rootViewController: viewController3)
+        let navigationController4 = UINavigationController(rootViewController: viewController4)
+        let navigationController5 = UINavigationController(rootViewController: viewController5)
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [navigationController]
-        window.rootViewController = tabBarController
+        tabBarController.viewControllers = [navigationController, navigationController2, navigationController3, navigationController4, navigationController5]
+         */
+        
+        let mainViewController = MainViewController()
+        window.rootViewController = mainViewController
         window.makeKeyAndVisible()
         self.window = window
     }

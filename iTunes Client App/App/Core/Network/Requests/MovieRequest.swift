@@ -1,13 +1,13 @@
 //
-//  PodcastRequest.swift
-//  ArabamAssignment
+//  MovieRequest.swift
+//  iTunes Client App
 //
-//  Created by Muhammed Karakul on 11.01.2022.
+//  Created by Murat ŞENOL on 5.10.2022.
 //
 
 import Foundation
 
-struct PodcastRequest: DataRequest {
+struct MovieRequest: DataRequest {
     
     var searchText: String
     var baseURL: String {
@@ -19,21 +19,21 @@ struct PodcastRequest: DataRequest {
     
     var queryItems: [String : String] {
         ["term": searchText,
-         "media" : "podcast"]
+         "media" : "movie"]
     }
     
     var method: HTTPMethod {
         .get
     }
     
-    init(searchText: String = "Podcast") {
+    init(searchText: String = "Movie") {
         self.searchText = searchText
     }
     
-    func decode(_ data: Data) throws -> PodcastResponse {
+    func decode(_ data: Data) throws -> MovieResponse {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let response = try decoder.decode(PodcastResponse.self, from: data)
+        let response = try decoder.decode(MovieResponse.self, from: data)
         return response
     }
 }

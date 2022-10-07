@@ -9,6 +9,7 @@ import Foundation
 
 protocol DataRequest {
     associatedtype Response
+    var searchText: String { get set}
     var baseURL: String { get }
     var url: String { get }
     var method: HTTPMethod { get }
@@ -26,6 +27,14 @@ extension DataRequest where Response: Decodable {
 }
 
 extension DataRequest {
+    var baseUrl: String {
+        "https://itunes.apple.com"
+    }
+    
+    var url: String {
+        "/search"
+    }
+    
     var headers: [String : String] {
         [:]
     }
