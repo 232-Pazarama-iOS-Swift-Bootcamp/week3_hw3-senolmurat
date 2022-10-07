@@ -1,5 +1,10 @@
 # Pazarama iOS Bootcamp - Hafta 3 - Ödev
 
+## Ekran Görüntüleri
+<img src="media/screenshot1.jpeg" width="200"> <img src="media/screenshot2.jpeg" width="200">     <img src="media/video1.gif" width="200"> <img src="media/video2.gif" width="200">
+
+
+
 
 ## iTunes Client App
 
